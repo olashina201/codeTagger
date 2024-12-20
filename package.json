@@ -11,24 +11,20 @@
     "Other"
   ],
   "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olashina201/codeTagger.git"
+  },
   "main": "./dist/extension.js",
   "contributes": {
-    "configuration": {
-      "title": "Code Tagger",
-      "properties": {
-        "code-tagger.tagIcon": {
-          "type": "string",
-          "default": "$(tag)",
-          "description": "The icon to use for tags in the activity bar."
-        }
-      }
-    },
     "viewsContainers": {
       "activitybar": [
         {
           "id": "code-tagger-view-container",
           "title": "Code Tagger",
-          "icon": "$(tag)"
+          "icon": "$(tag)",
+          "label": "Tags (${tagsCount})",
+          "when": "code-tagger.hasTags"
         }
       ]
     },
@@ -37,7 +33,6 @@
         {
           "id": "code-tagger-view",
           "name": "Tagged Users",
-          "icon": "$(tag)",
           "type": "tree",
           "when": "true"
         }
@@ -67,6 +62,16 @@
           "when": "view == code-tagger-view"
         }
       ]
+    },
+    "configuration": {
+      "title": "Code Tagger",
+      "properties": {
+        "code-tagger.tagIcon": {
+          "type": "string",
+          "default": "$(tag)",
+          "description": "The icon to use for tags in the activity bar."
+        }
+      }
     }
   },
   "scripts": {

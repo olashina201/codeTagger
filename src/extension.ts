@@ -2,23 +2,11 @@ import * as vscode from "vscode";
 import { TagProvider } from "./tagProvider";
 import { TagViewProvider } from "./tagView";
 import { Tag } from "./types";
-import * as path from "path";
-
-let tagCount = 0;
 
 export function activate(context: vscode.ExtensionContext) {
   const tagProvider = new TagProvider(context);
+
   const updateIcon = (tagCount: number) => {
-    const iconPath =
-      tagCount > 0
-        ? path.join(
-            __filename,
-            "..",
-            "..",
-            "resources",
-            `tag-count-${tagCount}.svg`
-          )
-        : path.join(__filename, "..", "..", "resources", `tag.svg`);
     vscode.commands.executeCommand(
       "setContext",
       "code-tagger.hasTags",
@@ -27,20 +15,30 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.executeCommand(
       "setContext",
       "code-tagger.iconPath",
-      iconPath
+      "$(tag)"
+    );
+    vscode.commands.executeCommand(
+      "setContext",
+      "code-tagger.badgeCount",
+      tagCount > 0 ? tagCount : ""
     );
   };
+
   const tagViewProvider = new TagViewProvider(tagProvider, updateIcon);
 
   vscode.window.registerTreeDataProvider("code-tagger-view", tagViewProvider);
 
   context.subscriptions.push(
-    vscode.workspace.onDidChangeTextDocument((event) =>
-      tagProvider.onDidChangeTextDocument(event)
-    ),
+    vscode.workspace.onDidChangeTextDocument((event) => {
+      tagProvider.onDidChangeTextDocument(event).then(() => {
+        tagViewProvider.refresh();
+      });
+    }),
     vscode.window.onDidChangeActiveTextEditor((editor) => {
       if (editor) {
-        tagProvider.updateTags(editor.document);
+        tagProvider.updateTags(editor.document).then(() => {
+          tagViewProvider.refresh();
+        });
       }
     }),
     vscode.commands.registerCommand("code-tagger.clearTags", () => {
@@ -59,14 +57,17 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   vscode.workspace.onDidSaveTextDocument((document) => {
-    tagProvider.updateTags(document);
-    tagViewProvider.refresh();
+    tagProvider.updateTags(document).then(() => {
+      tagViewProvider.refresh();
+    });
   });
 
   if (vscode.window.activeTextEditor) {
-    tagProvider.updateTags(vscode.window.activeTextEditor.document);
+    tagProvider.updateTags(vscode.window.activeTextEditor.document).then(() => {
+      tagViewProvider.refresh();
+    });
   }
-  updateIcon(tagProvider.tags.length);
+  updateIcon(tagProvider.tags.length || 1);
 }
 
 export function deactivate() {}

@@ -12,7 +12,7 @@ export class TagProvider {
   public get tags(): Tag[] {
     return this._tags;
   }
-
+  // @Quadri ,nfnd
   private loadTags() {
     const storedTags = this.context.workspaceState.get<Tag[]>("codeTags");
     if (storedTags) {

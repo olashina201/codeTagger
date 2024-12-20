@@ -1,0 +1,155 @@
+[
+  {
+    "name": "Bank of Africa-Senegal",
+    "swift": "AFRISNDAXXX",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BOA Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Atlantique Senegal",
+    "swift": "ATSNSNDAXXX",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Atlantique Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO)",
+    "swift": "BCAOSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Not applicable",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["None"]
+  },
+  {
+    "name": "Banque de Dakar",
+    "swift": "BDKRSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BDK Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque de l'Habitat du Senegal",
+    "swift": "LHSESNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BHS Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Islamique du Sénégal",
+    "swift": "ISSNSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BIS Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Internationale pour le Commerce et l'Industrie du Sénégal (BICIS)",
+    "swift": "BICISNDX",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BICIS Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Nationale pour le Développement Économique du Sénégal (BNDE)",
+    "swift": "BNDXSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BNDE Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Banque Régionale de Marchés",
+    "swift": "BRMXSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "BRM Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Caisse Nationale de Crédit Agricole du Sénégal (CNCAS)",
+    "swift": "CADKSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "CNCAS Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Citibank Senegal",
+    "swift": "CITISNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Citi Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["None"]
+  },
+  {
+    "name": "Compagnie Bancaire de l'Afrique Occidentale (CBAO)",
+    "swift": "CBAOSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "CBAO Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Coris Bank International Senegal",
+    "swift": "CORISNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Coris Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Crédit du Sénégal",
+    "swift": "BCMASNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Crédit du Sénégal Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Ecobank Senegal",
+    "swift": "ECOCSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "Ecobank Mobile App",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "Société Générale de Banques au Sénégal",
+    "swift": "SGSNSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "YUP Mobile",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  },
+  {
+    "name": "United Bank for Africa (UBA) Senegal",
+    "swift": "UNAFSNDA",
+    "location": "Dakar",
+    "country": "SN",
+    "mobileBankingService": "UBA Mobile Banking",
+    "mtnMoMoIntegration": "No",
+    "otherMobileWalletServices": ["Orange Money", "Wave"]
+  }
+]

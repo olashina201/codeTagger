@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { Tag } from "./types";
 import { TagProvider } from "./tagProvider";
 
-export class TagViewProvider implements vscode.TreeDataProvider<Tag> {
+export class TagViewProvider implements vscode.TreeDataProvider<Tag | string> {
   private _onDidChangeTreeData: vscode.EventEmitter<
     Tag | undefined | null | void
   > = new vscode.EventEmitter<Tag | undefined | null | void>();
@@ -19,9 +19,15 @@ export class TagViewProvider implements vscode.TreeDataProvider<Tag> {
     this._onDidChangeTreeData.fire();
   }
 
-  getTreeItem(element: Tag): vscode.TreeItem {
+  getTreeItem(element: Tag | string): vscode.TreeItem {
+    if (typeof element === "string") {
+      return new vscode.TreeItem(
+        element,
+        vscode.TreeItemCollapsibleState.Collapsed
+      );
+    }
     const treeItem = new vscode.TreeItem(
-      `${element.user}: ${element.file} - Line ${element.line}`,
+      `${element.file} - Line ${element.line}`,
       vscode.TreeItemCollapsibleState.None
     );
     treeItem.tooltip = element.comment;
@@ -33,10 +39,19 @@ export class TagViewProvider implements vscode.TreeDataProvider<Tag> {
     return treeItem;
   }
 
-  getChildren(element?: Tag): vscode.ProviderResult<Tag[]> {
-    if (element) {
-      return [];
+  getChildren(element?: Tag | string): vscode.ProviderResult<Tag[] | string[]> {
+    if (!element) {
+      const userTags = new Map<string, number>();
+      this.tagProvider.tags.forEach((tag) => {
+        const count = userTags.get(tag.user) || 0;
+        userTags.set(tag.user, count + 1);
+      });
+      return Array.from(userTags.keys());
     }
-    return this.tagProvider.tags;
+    if (typeof element === "string") {
+      return this.tagProvider.tags.filter((tag) => tag.user === element);
+    }
+
+    return [];
   }
 }
