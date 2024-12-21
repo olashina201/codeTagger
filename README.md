@@ -19,7 +19,7 @@ A VS Code extension that allows you to tag users in code comments, making it eas
 
 ### Screenshot
 
-![codeTagger example](images/code-tagger-example.png)
+![codeTagger example](images/image.png)
 
 *Example of how codeTagger will be displayed.*
 
