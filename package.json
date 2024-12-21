@@ -3,6 +3,13 @@
   "displayName": "Code Tagger",
   "description": "Tag users in code comments.",
   "version": "0.0.1",
+  "author": {
+    "name": "Quadri Olashina Sikiru", 
+    "email": "quadriolashina@gmail.com",
+    "github": "https://github.com/olashina201",
+    "twitter": "https://twitter.com/code_advocate",
+    "linkedin": "https://linkedin.com/in/quadri-sikiru"
+  },
   "publisher": "yourpublisher",
   "engines": {
     "vscode": "^1.96.0"
